@@ -7,10 +7,13 @@ use ReflectionProperty;
 
 trait ExceptionTraceFixer
 {
-    private static function new(...$args): self
+    /**
+     * @return static
+     */
+    protected static function new(...$args): self
     {
         static $prop;
-        $exception = new self(...$args);
+        $exception = new static(...$args);
         if (!($exception instanceof Exception)) {
             return $exception;
         }
@@ -19,7 +22,7 @@ trait ExceptionTraceFixer
         }
         $prop->setAccessible(true);
         foreach ($prop->getValue($exception) as $i => $frame) {
-            if (!empty($frame['class']) && \is_a($frame['class'], self::class, true)) {
+            if (!empty($frame['class']) && \is_a(static::class, $frame['class'], true)) {
                 $last = $frame;
                 continue;
             }

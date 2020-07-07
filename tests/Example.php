@@ -12,4 +12,13 @@ class Example
             return ['file' => $file, 'line' => $line, 'exception' => $exception];
         }
     }
+
+    public static function test2(): array
+    {
+        try {
+            $file = __FILE__; $line = __LINE__; throw ExampleDerivedException::create2(...\func_get_args());
+        } catch (ExampleDerivedException $exception) {
+            return ['file' => $file, 'line' => $line, 'exception' => $exception];
+        }
+    }
 }

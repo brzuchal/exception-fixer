@@ -5,7 +5,7 @@ fixing exception information like file, line and trace.
 
 ## Installation
 
-Use [Composer] to install the package:
+Use [Composer](https://getcomposer.org/) to install the package:
 
 ```
 $ composer require brzuchal/exception-fixer
@@ -34,9 +34,9 @@ class ExampleException extends Exception
 
 Contributions to the package are always welcome!
 
-* Report any bugs or issues you find on the [issue tracker].
-* You can grab the source code at the package's [Git repository].
+* Report any bugs or issues you find on the [issue tracker](https://github.com/brzuchal/exception-fixer/issues).
+* You can grab the source code at the package's [git repository](https://github.com/brzuchal/exception-fixer).
 
 ## License
 
-All contents of this package are licensed under the [MIT license].
+All contents of this package are licensed under the [MIT license](LICENSE).

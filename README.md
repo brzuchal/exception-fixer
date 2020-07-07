@@ -28,6 +28,18 @@ class ExampleException extends Exception
         ));
     }
 }
+
+try {
+    throw ExampleException::fail($command);
+} catch (ExampleException $exception) {
+    echo $exception->getFile(); 
+    echo $exception->getLine();
+    echo $exception->getTraceAsString();
+    echo $exception;
+    // above points to the place where the throw statement was executed
+    // normally this would point to the place where ExampleException is created
+    // we cut all trace information from ExampleException method calls on creation
+}
 ```
 
 ## Contribute
